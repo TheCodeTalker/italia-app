@@ -18,6 +18,7 @@ export type OwnProps = {
   idps: ReadonlyArray<IdentityProvider>;
   // A callback function called when an Identity Provider is selected
   onIdpSelected: (_: IdentityProvider) => void;
+  testID?: string;
 };
 
 export type Props = OwnProps;

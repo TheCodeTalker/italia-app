@@ -54,6 +54,7 @@
   },
   "devDependencies": {
     "@types/color": "^3.0.0",
+    "@types/detox": "^7.3.0",
     "@types/jest": "^22.2.3",
     "@types/lodash": "^4.14.108",
     "@types/react": "^16.3.0-alpha",
@@ -78,6 +79,7 @@
     "danger-plugin-digitalcitizenship": "^0.2.0",
     "italia-utils": "^3.6.1",
     "jest": "22.4.4",
+    "detox": "^7.3.5",
     "prettier": "1.12.1",
     "react-native-typescript-transformer": "^1.2.5",
     "react-test-renderer": "16.3.2",
@@ -119,5 +121,17 @@
       "./assets/fonts/io-icon-font",
       "./assets/fonts/RobotoMono"
     ]
+  },
+  "detox": {
+    "test-runner": "jest",
+    "runner-config": "e2e/config.json",
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/ItaliaApp.app",
+        "build": "xcodebuild -workspace ios/ItaliaApp.xcworkspace -scheme ItaliaApp -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 6"
+      }
+    }
   }
 }

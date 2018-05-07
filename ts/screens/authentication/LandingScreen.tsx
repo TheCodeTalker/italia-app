@@ -47,6 +47,7 @@ class LandingScreen extends React.Component<Props, never> {
             primary={true}
             iconLeft={true}
             onPress={_ => this.navigateToIdpSelection()}
+            testID="landing-button-login"
           >
             <Icon name="user" />
             <Text>{I18n.t("authentication.landing.login")}</Text>
