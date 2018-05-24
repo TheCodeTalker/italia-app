@@ -432,3 +432,30 @@ Esempio di utilizzo:
 ```
 
 Per cambiare il tema del wrapper, dell'icona o del testo modificare il file `ts/theme/components/TextWithIcon.ts`.
+
+### Test end to end con Detox (sperimentale)
+
+Per i test di integrazione sui simulatori usiamo
+[Detox](https://github.com/wix/detox).
+
+I test end to end si trovano in [ts/__e2e__/](ts/__e2e__/).
+
+Per compilare l'app in preparazione al test:
+
+```
+$ detox build
+```
+
+(opzionale) Lanciare il simulatore iOS (con [ios-sim](https://www.npmjs.com/package/ios-sim) per comodità):
+
+```
+$ ios-sim start --devicetypeid "iPhone-6, 10.2"
+```
+
+Nel caso non si lanci il simulatore, Detox ne lancerà uno in background.
+
+Lancio dei test:
+
+```
+$ detox test
+```
